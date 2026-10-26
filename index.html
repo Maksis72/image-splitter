@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Splitter: Split an Image to Print as a Big Poster (Free)</title>
+<meta name="description" content="Free image splitter: split any image into A4 or Letter pages and print it as a big poster, or cut it into equal pieces. Open source, runs in your browser.">
+<link rel="canonical" href="https://maksis72.github.io/image-splitter/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image Splitter: Split an Image to Print as a Big Poster (Free)">
+<meta property="og:description" content="Split any image into A4 or Letter pages and print it as a big poster, or cut it into equal pieces. Open source, in your browser.">
+<meta property="og:url" content="https://maksis72.github.io/image-splitter/">
+<meta property="og:image" content="https://maksis72.github.io/image-splitter/assets/image-splitter-poster-on-4-pages.webp">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#2b1d12;--muted:#6b5643;--paper:#f6ecd6;--paper2:#efe0bf;--card:#fffaf0;--line:#d9c49c;--red:#b3261e;--red2:#8f1d17;--navy:#14213d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--red2)}
+h1,h2{font-family:Georgia,"Times New Roman",serif;line-height:1.2}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{background:var(--navy)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;flex-wrap:wrap}
+.top a{color:#fff;text-decoration:none;font-weight:700}
+.top nav{display:flex;gap:16px;font-size:.95rem}
+.hero{text-align:center;padding:32px 0 8px}
+.hero h1{font-size:clamp(2rem,5.5vw,3rem);margin:0 0 .3em}
+.lead{max-width:760px;margin:0 auto;color:var(--muted);font-size:1.08rem}
+.tool{display:grid;gap:18px;padding:24px 0;grid-template-columns:minmax(0,1fr)}
+@media (min-width:880px){.tool{grid-template-columns:minmax(0,1fr) 340px;align-items:start}}
+.stage{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.drop{display:flex;align-items:center;justify-content:center;min-height:300px;border:2px dashed var(--line);border-radius:10px;color:var(--muted);font-weight:700;cursor:pointer}
+.drop.has-image{border:0;min-height:0}
+.drop.has-image span{display:none}
+#preview{display:block;margin:0 auto;max-width:100%;height:auto;box-shadow:0 6px 18px rgba(43,29,18,.18)}
+#info{font-weight:700;margin:10px 0 0}
+.panel{display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.card h2{font-size:1.05rem;margin:0 0 10px}
+label{display:grid;gap:3px;font-size:.88rem;font-weight:700;color:var(--muted);margin:0 0 10px}
+select,input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:11px 18px;border:0;border-radius:999px;background:var(--red);color:#fff;font:700 1rem system-ui,sans-serif;cursor:pointer;text-decoration:none}
+.btn.alt{background:var(--navy)}
+.btn:disabled{opacity:.55;cursor:progress}
+.hint{font-size:.86rem;color:var(--muted);margin:8px 0 0}
+.cta{background:var(--navy);color:#fff;border-radius:16px;padding:22px;text-align:center;margin:8px 0 24px}
+.cta h2{color:#fff;margin:0 0 8px}
+.cta p{color:#e9dcc0;margin:0 auto 14px;max-width:640px}
+.cta .btn{width:auto}
+section{padding:8px 0 16px}
+code{background:var(--paper2);padding:1px 5px;border-radius:5px}
+footer{border-top:1px solid var(--line);padding:18px 0 30px;color:var(--muted);font-size:.9rem}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Image Splitter","url":"https://maksis72.github.io/image-splitter/","applicationCategory":"MultimediaApplication","operatingSystem":"Any (web browser)","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/Maksis72/image-splitter","creator":{"@type":"Organization","name":"onepieceposter.com","url":"https://onepieceposter.com/"}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a href="https://maksis72.github.io/image-splitter/">Image Splitter</a>
+ <nav><a href="https://onepieceposter.com/image-splitter/">Full version</a><a href="https://github.com/Maksis72/image-splitter">GitHub</a></nav>
+</div></header>
+<main>
+<div class="wrap hero">
+ <h1>Image Splitter</h1>
+ <p class="lead">Split any image into A4 or Letter pages and print it at home as a big poster, or cut it into equal pieces for an Instagram grid. Free and open source: everything runs in your browser and your image is never uploaded.</p>
+</div>
+<div class="wrap tool">
+ <div class="stage">
+  <label class="drop" id="drop" for="file"><span>Drop an image here or click to choose one</span><canvas id="preview" hidden></canvas></label>
+  <input type="file" id="file" accept="image/*" hidden>
+  <p id="info" aria-live="polite"></p>
+ </div>
+ <div class="panel">
+  <div class="card">
+   <h2>1. Pages</h2>
+   <div class="two">
+    <label>Paper<select id="paper"><option value="a4">A4</option><option value="letter">US Letter</option></select></label>
+    <label>Orientation<select id="orient"><option value="portrait">Portrait</option><option value="landscape">Landscape</option></select></label>
+   </div>
+   <label>Pages across<select id="across"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+   <div class="two">
+    <label>Style<select id="style"><option value="photo">Photo</option><option value="dots">Halftone dots</option></select></label>
+    <label>Dot size<select id="dot"><option value="3">3 mm</option><option value="6" selected>6 mm</option><option value="10">10 mm</option></select></label>
+   </div>
+   <button type="button" class="btn" id="pdf" disabled>Download PDF</button>
+   <p class="hint">Print at 100% (actual size), trim along the cut marks and tape the pages together, page 1 top left.</p>
+  </div>
+  <div class="card">
+   <h2>2. Or split into pieces</h2>
+   <div class="two">
+    <label>Columns<input type="number" id="cols" min="1" max="20"></label>
+    <label>Rows<input type="number" id="rows" min="1" max="20"></label>
+   </div>
+   <button type="button" class="btn alt" id="zip" disabled>Download pieces (ZIP)</button>
+   <p class="hint" id="status" role="status"></p>
+  </div>
+ </div>
+</div>
+<div class="wrap">
+ <div class="cta">
+  <h2>Want More Than the Demo?</h2>
+  <p>The full Image Splitter and Poster Printer has standard poster sizes (24 x 36 in, A1...), a preview of the poster on a wall, color dots down to 0.5 mm, an assembly map page and 7 languages.</p>
+  <a class="btn" href="https://onepieceposter.com/image-splitter/">Open the full version</a>
+ </div>
+ <section>
+  <h2>How the Image Splitter Works</h2>
+  <p>The page splits your image into a grid of pages: the printable part of each page is the paper minus a 10 mm margin, the image is scaled to the chosen number of pages across and centered on as many rows as it needs. Each page is drawn at up to 200 DPI and saved into one PDF with cut marks and a page number. For the pieces, the original image is cut into equal parts at full resolution and packed into a ZIP.</p>
+  <p>The code is small and has no dependencies: <code>tiles.ts</code> (the grid math), <code>pdf.ts</code> (a tiny PDF writer), <code>zip.ts</code> (a ZIP writer with CRC-32) and <code>halftone.ts</code> (the dots). Read it, fork it or use it in your own project under the MIT license on <a href="https://github.com/Maksis72/image-splitter">GitHub</a>.</p>
+ </section>
+</div>
+</main>
+<footer><div class="wrap">
+ <p>Made by <a href="https://onepieceposter.com/">onepieceposter.com</a>, where you can also <a href="https://onepieceposter.com/">make a One Piece wanted poster</a> and print it big. Open source under the MIT license.</p>
+</div></footer>
+<script src="app.js"></script>
+</body>
+</html>

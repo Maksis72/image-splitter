@@ -1,0 +1,16 @@
+{
+  "name": "image-splitter",
+  "version": "1.0.0",
+  "description": "Split any image into A4 or Letter pages and print it as a big poster, or cut it into equal pieces. In the browser, no dependencies.",
+  "license": "MIT",
+  "homepage": "https://maksis72.github.io/image-splitter/",
+  "repository": "github:Maksis72/image-splitter",
+  "keywords": ["image splitter", "poster printer", "rasterbator", "tile print", "halftone", "pdf", "zip"],
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/app.ts --bundle --minify --format=iife --target=es2020,safari14 --outfile=app.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
