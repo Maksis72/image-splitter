@@ -3,7 +3,7 @@
 **Split any image into A4 or Letter pages and print it as a big poster, or cut it into equal pieces.** A free, open-source Rasterbator alternative with a halftone (dots) generator. It runs in the browser: no upload, no sign-up, no dependencies.
 
 **Live demo:** https://maksis72.github.io/image-splitter/
-**Full version** with standard poster sizes, a wall preview, color dots and 7 languages: [Image Splitter & Poster Printer on onepieceposter.com](https://onepieceposter.com/image-splitter/)
+**Full version** with standard poster sizes, a wall preview and color dots: [Image Splitter & Poster Printer on WooPoster](https://wooposter.com/image-splitter/)
 
 ![A 16 x 20 in poster split into 4 numbered pages](assets/image-splitter-poster-on-4-pages.webp)
 
@@ -14,7 +14,7 @@
 - **Halftone dots:** turns the picture into round black dots like the Rasterbator, so even a small photo looks sharp from a few steps away.
 - **Print quality:** shows the DPI of the poster before you print.
 
-The [full version](https://onepieceposter.com/image-splitter/) adds standard poster sizes (11 x 17 in to A0), A3, Legal and Tabloid paper, a preview of the poster on a wall next to a person, color dots from 0.5 mm, overlap for gluing, an assembly map page and English, Spanish, French, German, Portuguese, Italian and Indonesian.
+The [full version](https://wooposter.com/image-splitter/) adds standard poster sizes (11 x 17 in to A0), A3, Legal and Tabloid paper, a preview of the poster on a wall next to a person, color dots from 0.5 mm, overlap for gluing and an assembly map page.
 
 ## How it works
 
@@ -45,4 +45,4 @@ npm run build
 
 ## License
 
-MIT, see [LICENSE](LICENSE). Made by [onepieceposter.com](https://onepieceposter.com/), the free One Piece wanted poster maker.
+MIT, see [LICENSE](LICENSE). Made by [WooPoster](https://wooposter.com/), free online poster makers.

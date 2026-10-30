@@ -1,7 +1,7 @@
 // Image Splitter demo: split a picture into A4 or Letter pages and print it as a big poster (one PDF), or cut it
 // into equal pieces (one ZIP). Everything happens in the browser; nothing is uploaded.
 // Full version with standard poster sizes, a wall preview, color dots and an assembly map:
-// https://onepieceposter.com/image-splitter/
+// https://wooposter.com/image-splitter/
 
 import { localPaper, MM, PAPERS, PdfDoc } from './pdf'
 import { dotMap, drawDots, type DotMap } from './halftone'
